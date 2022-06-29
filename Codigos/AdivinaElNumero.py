@@ -28,7 +28,7 @@ def run():
                 num_rand = random.randint(1,100)
                 date = int(input("Ingrese un numero: "))
             else:
-                print("adiós vaquero ")
+                print("-- Adiós vaquero --")
                 break
 
 
