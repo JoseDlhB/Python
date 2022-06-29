@@ -130,3 +130,19 @@
 # nomnre = input("Escribe tu nombre: ")
 # for letra in nombre:
 #   print(letra)
+
+from numpy import append
+
+def factorial(n):
+    if n < 0:
+        print("Factorial de un numero negativo no exite")
+    elif n == 0:
+        return 1
+    else:
+        fact = 1
+        while(n > 1):
+            fact *= n
+            n -= 1
+        return fact
+
+print(factorial(5))
