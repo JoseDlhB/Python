@@ -131,18 +131,37 @@
 # for letra in nombre:
 #   print(letra)
 
-from numpy import append
+## Listas ##
+# Las listas nos permiten guardar múltiples valores en una sola variable. 
+# Estas listas en Python nos permiten guardar elementos del mismo tipo o 
+# diferentes, por lo que podemos tener strings, números enteros y decimales 
+# juntos en una misma variable. Las listas también son conocidas como 
+# arrays en otros lenguajes programación.
+# numeros = [1, 2.5, 25]
+# objetos = ['Hola', 3, 4.5, True]
+# Se usa el metodo append() para agregar elementos al objeto lista.
+# Se usa el metodo pop() para borrar elementos del objeto o lista.
+# for elemento in objetos: >> para recorrer una lista.
+# print(elementos)
 
-def factorial(n):
-    if n < 0:
-        print("Factorial de un numero negativo no exite")
-    elif n == 0:
-        return 1
-    else:
-        fact = 1
-        while(n > 1):
-            fact *= n
-            n -= 1
-        return fact
+## Tuplas ##
+# Las tuplas son estructuras de datos inmutables. Es decir, no puedes 
+# modificar una tupla a agregando o quitando un valor. Lo único que puedes
+# hacer es definir de nuevo esa tupla a. Los objetos inmutables (como los
+# strings) son tipos de datos para Python que apuntan a un lugar específico
+# en memoria y que su contenido no puede ser cambiado. Al cambiar el contenido
+# predefiniendo el contenido de la variable a, entonces cambiará su posición 
+# en memoria.
+# mi_tupla = (1, 2, 3)
 
-print(factorial(5))
+## Diccionarios ##
+# Los diccionarios en Python son una estructura de datos mutable las cuales 
+# almacenan diferentes tipos de valores sin darle importancia a su orden. 
+# Identifican a cada elemento por una clave (Key). Se escriben entre {}.
+# mi_diccionario = {
+#   'llave1' : 1,
+#   'llave2' : 2,
+#   'llave3' : 3,
+# }
+# print(mi_diccionario[llave1])
+print(10/2+5*7)
