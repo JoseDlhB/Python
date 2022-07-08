@@ -164,4 +164,88 @@
 #   'llave3' : 3,
 # }
 # print(mi_diccionario[llave1])
-print(10/2+5*7)
+
+#Complete la función que toma un número entero no negativo 'n' como entrada 
+#y devuelve una lista de todas las potencias de '2' con el exponente que va 
+#de '0' a n(incluido).
+
+def powers_of_two(n):
+    pow = []
+    for i in range(n+1):
+        pow.append(2**i)
+    return pow
+
+def even_or_odd(number):
+    if number%2 == 0:
+        return('Even')
+    else:
+        return('Odd')
+
+#Es bastante sencillo. Su objetivo es crear una función que elimine el 
+#primer y el último carácter de una cadena. Se le da un parámetro, la 
+#cadena original. No tiene que preocuparse por cadenas con menos de dos
+#caracteres.
+
+def remove_char(s):
+    return(s[1:len(s)-1])
+
+#Escriba la función bmi que calcula el índice de masa corporal
+#  (bmi = peso / altura 2 ).
+#si bmi <= 18.5 devuelve "Bajo peso"
+#si bmi <= 25.0 devuelve "Normal"
+# #si bmi <= 30.0 devuelve "Sobrepeso"
+#si bmi > 30 devolver "Obeso"
+
+def bmi(weight, height):
+
+    bmi = weight/height**2
+    if bmi <= 18.5:
+        return 'Underweight'
+    elif bmi <= 25.0:
+        return 'Normal'
+    elif bmi <= 30.0:
+        return 'Overweight'
+    else:
+        return 'Obese'
+
+#Escriba una función que indique si el numero ingresado tiene
+#raiz exacta o no.
+
+def raiz_InExact(num):
+    respuesta = 0
+    while respuesta**2 < num:
+        respuesta += 1
+        print(respuesta)
+    if respuesta**2 == num:
+        return(f'La raiz cuadrada de {num} es {respuesta}')
+    else:
+        return(f'{num} no tiene raiz cuadrada exacta')
+
+def aproximacion_raiz_cuadrada(num):
+    epsilon = 0.001
+    paso = epsilon**2
+    respuesta = 0.0
+
+    while abs(respuesta**2 - num) >= epsilon and respuesta**2 <= num:
+        respuesta += paso
+    if abs(respuesta**2 - num) >= epsilon:
+        return(f'No se encontro la raiz cuadrada {num}')
+    else:
+        return(f'La raiz cuadrada de {num} es {respuesta}')
+
+def busqueda_binRaices(num):
+    epsilon = 0.01
+    bajo = 0.0
+    alto = max(1.0, num)
+    respuesta = (alto+bajo)/2
+    while abs(respuesta**2 - num) >= epsilon:
+        print(f'bajo={bajo}, alto={alto}, respuesta={respuesta}')
+        if respuesta**2 < num:
+            bajo = respuesta
+        else: 
+            alto = respuesta
+        respuesta = (alto+bajo)/2
+    return(f'La raiz cuadrada de {num} es {respuesta}')
+
+print(busqueda_binRaices(12456))
+
