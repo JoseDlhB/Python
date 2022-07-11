@@ -3,7 +3,7 @@ import unittest
 from sqlalchemy import false, true
 
 """
-- Se basan en el flujo del programa
+- Se basan en el flujo del program
 - Prueba todos los caminos posibles de una función.
   Ramificaciones, bucles for y while, reursión.
 - Regression testing o mocks.
