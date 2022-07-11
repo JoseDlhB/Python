@@ -141,8 +141,22 @@
 # objetos = ['Hola', 3, 4.5, True]
 # Se usa el metodo append() para agregar elementos al objeto lista.
 # Se usa el metodo pop() para borrar elementos del objeto o lista.
+# Se usa el metodo insert(i,'valor') agregaun valor en la posición i y
+# recorre todos los demas.
+# Se usa el metodo remove('i') elimina el primer elemento con ese valor.
 # for elemento in objetos: >> para recorrer una lista.
 # print(elementos)
+
+## Clonar listas ##
+# a = [1,2,3]
+# c = list(a) >> usando la funcion list se puede clonar una lista
+# c = a[::] >> usando slice o rebanadas tambien se puede clonar una lista.
+
+## List comprehension ##
+# my_list = list(range(100))
+# double = [i * 2 for i in my_list]
+# pares = [i for i in my_list if i%2 == 0]
+
 
 ## Tuplas ##
 # Las tuplas son estructuras de datos inmutables. Es decir, no puedes 
@@ -153,6 +167,11 @@
 # predefiniendo el contenido de la variable a, entonces cambiará su posición 
 # en memoria.
 # mi_tupla = (1, 2, 3)
+# Pasar los datos de una tupla a variables diferentes
+# x,y,z = mi_tupla
+# x = 1
+# y = 2
+# z = 3 
 
 ## Diccionarios ##
 # Los diccionarios en Python son una estructura de datos mutable las cuales 
@@ -164,6 +183,9 @@
 #   'llave3' : 3,
 # }
 # print(mi_diccionario[llave1])
+# <diccionario>.get('llave',valor) >> sirve para saber si existe dicha llave,
+# si no exite retorna el valor agregado en los parametros.
+
 
 #Complete la función que toma un número entero no negativo 'n' como entrada 
 #y devuelve una lista de todas las potencias de '2' con el exponente que va 
@@ -208,44 +230,59 @@ def bmi(weight, height):
     else:
         return 'Obese'
 
-#Escriba una función que indique si el numero ingresado tiene
-#raiz exacta o no.
+## Recursividad ##
+# - Algoritmica
+#   Una forma de crear soluciones utilizando el principio de 
+#   "divide y venceras".
+# - Programática
+#   Una técnica programática mediante la cual una función se 
+#   llama a si misma.
 
-def raiz_InExact(num):
-    respuesta = 0
-    while respuesta**2 < num:
-        respuesta += 1
-        print(respuesta)
-    if respuesta**2 == num:
-        return(f'La raiz cuadrada de {num} es {respuesta}')
-    else:
-        return(f'{num} no tiene raiz cuadrada exacta')
+# Factorial#
+def factorial(n):
+    """Calcula el factorial de n
+    n int > 0
+    return n!  
+    """
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
 
-def aproximacion_raiz_cuadrada(num):
-    epsilon = 0.001
-    paso = epsilon**2
-    respuesta = 0.0
+# Serie de fibonacci#
+def fibonacci(n):
+    """
+    Calcula el numero fibonacci de n
+    n int > 0
+    return fibonacci n
+    """
+    if n == 0 or n == 1:
+        return 1
+    return fibonacci(n-1) + fibonacci(n-2)
 
-    while abs(respuesta**2 - num) >= epsilon and respuesta**2 <= num:
-        respuesta += paso
-    if abs(respuesta**2 - num) >= epsilon:
-        return(f'No se encontro la raiz cuadrada {num}')
-    else:
-        return(f'La raiz cuadrada de {num} es {respuesta}')
+def impares(n):
+    """
+    Calcula los numeros impares de n
+    return n numeros impares
+    """
+    for i in range(0,n+1,2):
+        return i-1
 
-def busqueda_binRaices(num):
-    epsilon = 0.01
-    bajo = 0.0
-    alto = max(1.0, num)
-    respuesta = (alto+bajo)/2
-    while abs(respuesta**2 - num) >= epsilon:
-        print(f'bajo={bajo}, alto={alto}, respuesta={respuesta}')
-        if respuesta**2 < num:
-            bajo = respuesta
-        else: 
-            alto = respuesta
-        respuesta = (alto+bajo)/2
-    return(f'La raiz cuadrada de {num} es {respuesta}')
 
-print(busqueda_binRaices(12456))
+## Manejo de excepciones ##
+# - Son comunes en la programación. no tienen nada de excepcional.
+# - En python normalmente se relacionan con errores semánticos.
+# - Se pueden crear excepciones propias.
+# - Si una excepción no se maneja el programa termina en error.
 
+# - Las excepciones se manejan con los keywords: try, except, finally.
+
+def divide_elementos_lista(lista, divisor):
+    try:
+        return[i/divisor for i in lista]
+    except ZeroDivisionError as e:
+        return lista
+
+#lista = list(range(10))
+#divisor = 3
+
+#print(divide_elementos_lista(lista,divisor))
