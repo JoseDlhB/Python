@@ -1,2 +1,2 @@
-# pythonBasico
-Realización del curso python básico de platzi 
+# Python
+Realización de diferentes ejercicios en python.
