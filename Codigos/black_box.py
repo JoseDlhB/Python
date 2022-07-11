@@ -1,7 +1,7 @@
 import unittest
 
 """
-Se utiliza para ver las inputs y outputs, de esta forma se observa
+Se utiliza para ver las inputs y outputs, observando
 si todo esta bien en el codigo.
 """
 def suma(num_1, num_2):
