@@ -1,4 +1,7 @@
 
+from operator import xor
+
+
 def Convert_Decimal_Binary(numero):
     """
     Ingresa un número entero y retorna una lista con
@@ -9,7 +12,7 @@ def Convert_Decimal_Binary(numero):
         if numero%2==0: 
             binario.append(0) #Agergar a la lista un '0' si el numero es módulo 2
             numero//=2
-        elif numero%2!=0: #Agregar un '1' a la lista si el numero no es módulo de 2
+        else:           #Agregar un '1' a la lista si el numero no es módulo de 2
             numero//=2
             binario.append(1)
     return(binario[::-1])
@@ -22,3 +25,5 @@ def run():
 
 if __name__ == '__main__':
     run()
+
+    
