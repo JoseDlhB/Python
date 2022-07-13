@@ -22,9 +22,10 @@ def run():
         print(f'{key}, {value} ')
     
     print()
-    
+
     for value in super_list:
         print(f'{value}')
+        
 
 if __name__ == '__main__':
     run()
