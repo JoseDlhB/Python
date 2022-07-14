@@ -5,7 +5,7 @@ def divisors(num):
 
 def run():  
     num = input(f'Ingrese un número: ')
-    assert num.isnumeric(), "Debes ingresar un número"
+    assert int(num) > 0 and num.isnumeric(), "Debes ingresar un número positivo"
     print(divisors(int(num)))
     print('Terminó mi programa')
    
